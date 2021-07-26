@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Redirect, Route, Switch } from 'react-router-dom'
+import ImdbMovies from './components/ImdbMovies';
+import MacMovies from './components/MacMovies';
+import NavbarUI from './components/NavbarUI';
+import NotFound from './components/common/NotFound';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavbarUI />
+      <Switch>
+        <div className="container">
+          <Route path="/404" component={NotFound} />
+          <Route path="/mac-movies" component={MacMovies} />
+          <Route path="/imdb-movies" component={ImdbMovies} />
+          <Route path="/" exact component={ImdbMovies} />
+          <Redirect from="/" to="/imdb-movies" />
+        </div>
+      </Switch>
     </div>
   );
 }

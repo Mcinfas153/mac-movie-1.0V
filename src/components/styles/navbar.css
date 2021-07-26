@@ -1,0 +1,29 @@
+.brand--logo{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+.navbar-nav>a{
+    margin: 0 10px;
+    color: white !important;
+    text-decoration: none;
+}
+.navbar-nav>a:hover {
+    color: #b8b8b8 !important;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+.navbar-toggler{
+    background-color: white;
+    border: 1px solid white;
+    
+}
+
+@keyframes example {
+    0%   {background-color:#5DADE2; left:0px; top:0px;}
+    25%  {background-color:#F7DC6F; left:200px; top:0px;}
+    50%  {background-color:#3498DB; left:200px; top:200px;}
+    75%  {background-color:#2ECC71; left:0px; top:200px;}
+    100% {background-color:#E74C3C; left:0px; top:0px;}
+  }
